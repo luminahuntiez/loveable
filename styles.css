@@ -14,6 +14,14 @@ body {
     line-height: 1.6;
     color: #e2e8f0;
     background-color: #0f172a;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .container {
@@ -87,6 +95,13 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 8px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    align-items: center;
 }
 
 .bar {
@@ -166,6 +181,10 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+    min-width: 44px;
 }
 
 .btn-primary {
@@ -823,40 +842,126 @@ section {
         display: flex;
     }
 
-.nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: #1e293b;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-    padding: 2rem 0;
-}
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #1e293b;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        padding: 2rem 0;
+        z-index: 999;
+    }
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        display: block;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 0 1rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
     .hero-buttons {
         justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
     }
 
-    .contact-content {
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .profile-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+
+    .cv-info {
+        font-size: 1rem;
+    }
+
+    .cv-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .cv-job {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .education-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        align-self: flex-start;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .experience-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .portfolio-card.featured {
@@ -864,7 +969,30 @@ section {
     }
 
     .card-iframe iframe {
-        height: 400px;
+        height: 300px;
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .interest-card {
+        padding: 1.5rem;
+    }
+
+    .skills-content {
+        padding: 0 1rem;
+    }
+
+    .skill-tags {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 
     .language-item {
@@ -875,32 +1003,247 @@ section {
 
     .language-name {
         min-width: auto;
+        font-size: 0.9rem;
     }
 
     .language-level {
         min-width: auto;
         text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .prao-card {
+        padding: 1.5rem;
+    }
+
+    .prao-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+    .cv-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cv-info {
+        font-size: 0.9rem;
+    }
+
+    .cv-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .cv-job {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .cv-job p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .experience-card {
+        padding: 1rem;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .experience-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-card p {
+        font-size: 0.9rem;
+    }
+
+    .portfolio-card {
+        padding: 1rem;
+    }
+
+    .card-iframe iframe {
+        height: 250px;
+    }
+
+    .interest-card {
+        padding: 1rem;
+    }
+
+    .interest-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .interest-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .interest-card p {
+        font-size: 0.9rem;
+    }
+
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .language-name {
+        font-size: 0.8rem;
+    }
+
+    .language-level {
+        font-size: 0.75rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .prao-card {
+        padding: 1rem;
+    }
+
+    .prao-text p {
+        font-size: 0.9rem;
+    }
+
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .cv-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .cv-section h2 {
+        font-size: 1.1rem;
     }
 
     .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .profile-image {
+        font-size: 3rem;
+    }
+
+    .profile-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .profile-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-container {
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        max-width: 250px;
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cv-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .cv-job {
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 }
 

@@ -229,20 +229,25 @@ function switchLanguage(lang) {
     
     // Update all elements with data attributes
     document.querySelectorAll('[data-en][data-sv]').forEach(element => {
-        if (lang === 'en') {
-            element.textContent = element.getAttribute('data-en');
-        } else {
-            element.textContent = element.getAttribute('data-sv');
-        }
-    });
-    
-    // Update HTML content for elements that need innerHTML
-    document.querySelectorAll('[data-en][data-sv]').forEach(element => {
-        if (element.tagName === 'H1' && element.classList.contains('hero-title')) {
+        const enText = element.getAttribute('data-en');
+        const svText = element.getAttribute('data-sv');
+        
+        // Check if the text contains HTML tags
+        const hasHTML = enText.includes('<') || svText.includes('<');
+        
+        if (hasHTML) {
+            // Use innerHTML for elements with HTML content
             if (lang === 'en') {
-                element.innerHTML = element.getAttribute('data-en');
+                element.innerHTML = enText;
             } else {
-                element.innerHTML = element.getAttribute('data-sv');
+                element.innerHTML = svText;
+            }
+        } else {
+            // Use textContent for plain text
+            if (lang === 'en') {
+                element.textContent = enText;
+            } else {
+                element.textContent = svText;
             }
         }
     });

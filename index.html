@@ -274,7 +274,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card featured">
                     <div class="card-header">
-                        <h3 data-en="Lovable Project" data-sv="Lovable Projekt">Lovable Project</h3>
+                        <h3 data-en="Lovable Project" data-sv="Lovable Projekt - Test gärna">Lovable Project - Play around with it</h3>
                         <div class="card-badge" data-en="Main Project" data-sv="Huvudprojekt">Main Project</div>
                     </div>
                     <div class="card-content">
@@ -299,20 +299,32 @@
                 <div class="portfolio-card">
                     <div class="card-header">
                         <h3 data-en="Codecademy Learning Journey" data-sv="Codecademy Lärresan">Codecademy Learning Journey</h3>
-                        <div class="card-badge" data-en="Certificates" data-sv="Certifikat">Certificates</div>
+                        <div class="card-badge" data-en="Learning" data-sv="Lärande">Learning</div>
                     </div>
                     <div class="card-content">
                         <p data-en="I've been taking Git, HTML, CSS, and JavaScript courses on Codecademy. Here are the achievements and certificates I've earned along the way." data-sv="Jag har tagit Git, HTML, CSS och JavaScript-kurser på Codecademy. Här är de prestationer och certifikat jag har fått under resans gång.">I've been taking Git, HTML, CSS, and JavaScript courses on Codecademy. Here are the achievements and certificates I've earned along the way.</p>
-                        <div class="card-actions">
-                            <a href="codecademy.mov" target="_blank" class="btn btn-small">
-                                <i class="fas fa-play"></i> <span data-en="View Achievements" data-sv="Se prestationer">View Achievements</span>
-                            </a>
-                            <a href="courses.png" target="_blank" class="btn btn-small" style="background: #10b981; margin-left: 10px;">
-                                <i class="fas fa-graduation-cap"></i> <span data-en="My Courses" data-sv="Mina kurser">My Courses</span>
-                            </a>
-                            <a href="Certificates.png" target="_blank" class="btn btn-small" style="background: #f59e0b; margin-left: 10px;">
-                                <i class="fas fa-certificate"></i> <span data-en="Certificates" data-sv="Certifikat">Certificates</span>
-                            </a>
+                        
+                        <div class="codecademy-media">
+                            <div class="media-item">
+                                <h4 data-en="Achievements Video" data-sv="Prestationsvideo">Achievements Video</h4>
+                                <video controls class="codecademy-video">
+                                    <source src="media/codecademy.mov" type="video/mp4">
+                                    <source src="media/codecademy.mov" type="video/quicktime">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            
+                            <div class="media-grid">
+                                <div class="media-item">
+                                    <h4 data-en="My Courses" data-sv="Mina kurser">My Courses</h4>
+                                    <img src="media/courses.png" alt="Codecademy Courses" class="codecademy-image" onclick="openImageModal('media/courses.png')">
+                                </div>
+                                
+                                <div class="media-item">
+                                    <h4 data-en="Certificates" data-sv="Certifikat">Certificates</h4>
+                                    <img src="media/Certificates.png" alt="Codecademy Certificates" class="codecademy-image" onclick="openImageModal('media/Certificates.png')">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -417,6 +429,38 @@
         </div>
     </section>
 
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeImageModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>

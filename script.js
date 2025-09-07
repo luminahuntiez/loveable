@@ -1,4 +1,3 @@
-// Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -8,14 +7,12 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }));
 }
 
-// Simple smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -29,7 +26,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Simple navbar background change
 let ticking = false;
 function updateNavbar() {
     const navbar = document.querySelector('.navbar');
@@ -52,7 +48,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Simple contact form handling
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -82,7 +77,6 @@ if (contactForm) {
     });
 }
 
-// Simple scroll to top button
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 scrollToTopBtn.className = 'scroll-to-top';
@@ -114,7 +108,6 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Show/hide scroll to top button
 let scrollTimeout;
 window.addEventListener('scroll', () => {
     if (scrollTimeout) {
@@ -131,9 +124,7 @@ window.addEventListener('scroll', () => {
     }, 100);
 });
 
-// Simple hover effects
 document.addEventListener('DOMContentLoaded', () => {
-    // Portfolio card hover effects
     document.querySelectorAll('.portfolio-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px)';
@@ -144,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Experience card hover effects
     document.querySelectorAll('.experience-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px)';
@@ -155,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Interest card hover effects
     document.querySelectorAll('.interest-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px)';
@@ -167,13 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Fullscreen toggle for Lovable project
 function toggleFullscreen() {
     const iframe = document.querySelector('.card-iframe iframe');
     const card = document.querySelector('.portfolio-card.featured');
     
     if (!document.fullscreenElement) {
-        // Enter fullscreen
         if (card.requestFullscreen) {
             card.requestFullscreen();
         } else if (card.webkitRequestFullscreen) {
@@ -182,13 +169,11 @@ function toggleFullscreen() {
             card.msRequestFullscreen();
         }
         
-        // Make iframe larger in fullscreen
         iframe.style.transform = 'scale(1)';
         iframe.style.width = '100%';
         iframe.style.height = '100vh';
         
     } else {
-        // Exit fullscreen
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) {
@@ -197,53 +182,44 @@ function toggleFullscreen() {
             document.msExitFullscreen();
         }
         
-        // Reset iframe size
-        iframe.style.transform = 'scale(0.8)';
-        iframe.style.width = '125%';
-        iframe.style.height = '750px';
+        iframe.style.transform = 'scale(0.9)';
+        iframe.style.width = '111%';
+        iframe.style.height = '889px';
     }
 }
 
-// Listen for fullscreen changes
 document.addEventListener('fullscreenchange', function() {
     const iframe = document.querySelector('.card-iframe iframe');
     if (!document.fullscreenElement) {
-        // Reset iframe when exiting fullscreen
         iframe.style.transform = 'scale(0.9)';
         iframe.style.width = '111%';
         iframe.style.height = '889px';
     }
 });
 
-// Language switching functionality
 let currentLanguage = 'en';
 
 function switchLanguage(lang) {
     currentLanguage = lang;
     
-    // Update language buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     document.getElementById(`lang-${lang}`).classList.add('active');
     
-    // Update all elements with data attributes
     document.querySelectorAll('[data-en][data-sv]').forEach(element => {
         const enText = element.getAttribute('data-en');
         const svText = element.getAttribute('data-sv');
         
-        // Check if the text contains HTML tags
         const hasHTML = enText.includes('<') || svText.includes('<');
         
         if (hasHTML) {
-            // Use innerHTML for elements with HTML content
             if (lang === 'en') {
                 element.innerHTML = enText;
             } else {
                 element.innerHTML = svText;
             }
         } else {
-            // Use textContent for plain text
             if (lang === 'en') {
                 element.textContent = enText;
             } else {
@@ -252,11 +228,9 @@ function switchLanguage(lang) {
         }
     });
     
-    // Store language preference
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Load saved language preference on page load
 document.addEventListener('DOMContentLoaded', function() {
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     switchLanguage(savedLanguage);

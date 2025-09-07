@@ -166,3 +166,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Fullscreen toggle for Lovable project
+function toggleFullscreen() {
+    const iframe = document.querySelector('.card-iframe iframe');
+    const card = document.querySelector('.portfolio-card.featured');
+    
+    if (!document.fullscreenElement) {
+        // Enter fullscreen
+        if (card.requestFullscreen) {
+            card.requestFullscreen();
+        } else if (card.webkitRequestFullscreen) {
+            card.webkitRequestFullscreen();
+        } else if (card.msRequestFullscreen) {
+            card.msRequestFullscreen();
+        }
+        
+        // Make iframe larger in fullscreen
+        iframe.style.transform = 'scale(1)';
+        iframe.style.width = '100%';
+        iframe.style.height = '100vh';
+        
+    } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        
+        // Reset iframe size
+        iframe.style.transform = 'scale(0.8)';
+        iframe.style.width = '125%';
+        iframe.style.height = '750px';
+    }
+}
+
+// Listen for fullscreen changes
+document.addEventListener('fullscreenchange', function() {
+    const iframe = document.querySelector('.card-iframe iframe');
+    if (!document.fullscreenElement) {
+        // Reset iframe when exiting fullscreen
+        iframe.style.transform = 'scale(0.8)';
+        iframe.style.width = '125%';
+        iframe.style.height = '750px';
+    }
+});

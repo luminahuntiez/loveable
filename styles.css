@@ -423,6 +423,16 @@ section {
     background: #0066ff;
 }
 
+.education-timeline::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, #0066ff, transparent);
+}
+
 .timeline-item {
     display: flex;
     align-items: flex-start;
@@ -459,6 +469,28 @@ section {
 
 .timeline-content p {
     color: #cccccc;
+}
+
+.timeline-end {
+    margin-bottom: 0;
+}
+
+.timeline-end-icon {
+    background: linear-gradient(135deg, #0066ff, #00aaff);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 102, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+    }
 }
 
 .experience {
@@ -963,6 +995,10 @@ section {
     }
 
     .education-timeline::before {
+        left: 20px;
+    }
+
+    .education-timeline::after {
         left: 20px;
     }
 

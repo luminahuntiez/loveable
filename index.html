@@ -15,30 +15,38 @@
             <div class="nav-logo">
                 <h2>Hunter Jackson</h2>
             </div>
+            <div class="language-switcher">
+                <button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">
+                    🇺🇸 EN
+                </button>
+                <button id="lang-sv" class="lang-btn" onclick="switchLanguage('sv')">
+                    🇸🇪 SV
+                </button>
+            </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Start</a>
+                    <a href="#home" class="nav-link" data-en="Home" data-sv="Start">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">CV</a>
+                    <a href="#about" class="nav-link" data-en="CV" data-sv="CV">CV</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#education" class="nav-link">Utbildning</a>
+                    <a href="#education" class="nav-link" data-en="Education" data-sv="Utbildning">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#experience" class="nav-link">Erfarenhet</a>
+                    <a href="#experience" class="nav-link" data-en="Experience" data-sv="Erfarenhet">Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#portfolio" class="nav-link" data-en="Portfolio" data-sv="Portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">Färdigheter</a>
+                    <a href="#skills" class="nav-link" data-en="Skills" data-sv="Färdigheter">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#interests" class="nav-link">Intressen</a>
+                    <a href="#interests" class="nav-link" data-en="Interests" data-sv="Intressen">Interests</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#prao" class="nav-link">Prao-önskan</a>
+                    <a href="#prao" class="nav-link" data-en="Internship" data-sv="Prao-önskan">Internship</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -53,11 +61,11 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Hej, jag heter <span class="highlight">Hunter Jackson</span></h1>
-                <p class="hero-subtitle">Initiativrik och tekniskt intresserad elev med internationell bakgrund från NYC till Skåne</p>
+                <h1 class="hero-title" data-en="Hi, I'm <span class='highlight'>Hunter Jackson</span>" data-sv="Hej, jag heter <span class='highlight'>Hunter Jackson</span>">Hi, I'm <span class="highlight">Hunter Jackson</span></h1>
+                <p class="hero-subtitle" data-en="Initiative-driven and tech-interested student with international background from NYC to Skåne" data-sv="Initiativrik och tekniskt intresserad elev med internationell bakgrund från NYC till Skåne">Initiative-driven and tech-interested student with international background from NYC to Skåne</p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Se mina projekt</a>
-                    <a href="#contact" class="btn btn-secondary">Kontakta mig</a>
+                    <a href="#portfolio" class="btn btn-primary" data-en="See my projects" data-sv="Se mina projekt">See my projects</a>
+                    <a href="#prao" class="btn btn-secondary" data-en="Contact me" data-sv="Kontakta mig">Contact me</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -259,15 +267,15 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Mina projekt</h2>
+            <h2 class="section-title" data-en="My Projects" data-sv="Mina projekt">My Projects</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-card featured">
                     <div class="card-header">
-                        <h3>Lovable Projekt</h3>
-                        <div class="card-badge">Huvudprojekt</div>
+                        <h3 data-en="Lovable Project" data-sv="Lovable Projekt">Lovable Project</h3>
+                        <div class="card-badge" data-en="Main Project" data-sv="Huvudprojekt">Main Project</div>
                     </div>
                     <div class="card-content">
-                        <p>Min huvudsakliga portfolio-webbplats skapad med AI och moderna webbteknologier</p>
+                        <p data-en="My main portfolio website created with AI and modern web technologies" data-sv="Min huvudsakliga portfolio-webbplats skapad med AI och moderna webbteknologier">My main portfolio website created with AI and modern web technologies</p>
                         <div class="card-iframe">
                             <iframe src="https://flash-lingual-master.lovable.app/" 
                                     frameborder="0" 
@@ -277,10 +285,10 @@
                         </div>
                         <div class="card-actions">
                             <a href="https://flash-lingual-master.lovable.app/" target="_blank" class="btn btn-small">
-                                <i class="fas fa-external-link-alt"></i> Öppna projekt
+                                <i class="fas fa-external-link-alt"></i> <span data-en="Open Project" data-sv="Öppna projekt">Open Project</span>
                             </a>
                             <button onclick="toggleFullscreen()" class="btn btn-small" style="background: #10b981; margin-left: 10px;">
-                                <i class="fas fa-expand"></i> Fullskärm
+                                <i class="fas fa-expand"></i> <span data-en="Fullscreen" data-sv="Fullskärm">Fullscreen</span>
                             </button>
                         </div>
                     </div>

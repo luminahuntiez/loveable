@@ -209,8 +209,50 @@ document.addEventListener('fullscreenchange', function() {
     const iframe = document.querySelector('.card-iframe iframe');
     if (!document.fullscreenElement) {
         // Reset iframe when exiting fullscreen
-        iframe.style.transform = 'scale(0.8)';
-        iframe.style.width = '125%';
-        iframe.style.height = '750px';
+        iframe.style.transform = 'scale(0.9)';
+        iframe.style.width = '111%';
+        iframe.style.height = '889px';
     }
+});
+
+// Language switching functionality
+let currentLanguage = 'en';
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`lang-${lang}`).classList.add('active');
+    
+    // Update all elements with data attributes
+    document.querySelectorAll('[data-en][data-sv]').forEach(element => {
+        if (lang === 'en') {
+            element.textContent = element.getAttribute('data-en');
+        } else {
+            element.textContent = element.getAttribute('data-sv');
+        }
+    });
+    
+    // Update HTML content for elements that need innerHTML
+    document.querySelectorAll('[data-en][data-sv]').forEach(element => {
+        if (element.tagName === 'H1' && element.classList.contains('hero-title')) {
+            if (lang === 'en') {
+                element.innerHTML = element.getAttribute('data-en');
+            } else {
+                element.innerHTML = element.getAttribute('data-sv');
+            }
+        }
+    });
+    
+    // Store language preference
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Load saved language preference on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    switchLanguage(savedLanguage);
 });

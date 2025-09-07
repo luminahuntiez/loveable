@@ -12,8 +12,8 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #e2e8f0;
-    background-color: #0f172a;
+    color: #ffffff;
+    background-color: #000000;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -35,11 +35,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    border-bottom: 1px solid #0066ff;
 }
 
 .nav-container {
@@ -52,8 +52,35 @@ body {
     height: 70px;
 }
 
+.language-switcher {
+    display: flex;
+    gap: 5px;
+    margin-right: 2rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid #0066ff;
+    color: #0066ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #0066ff;
+    color: white;
+}
+
+.lang-btn.active {
+    background: #0066ff;
+    color: white;
+}
+
 .nav-logo h2 {
-    color: #3b82f6;
+    color: #0066ff;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -73,7 +100,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #3b82f6;
+    color: #0066ff;
 }
 
 .nav-link::after {
@@ -83,7 +110,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #3b82f6;
+    background: #0066ff;
     transition: width 0.3s ease;
 }
 
@@ -117,7 +144,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: #0f172a;
+    background: #000000;
     color: white;
     position: relative;
     overflow: hidden;
@@ -130,8 +157,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    background: #000000;
 }
 
 .hero-container {
@@ -154,8 +180,8 @@ body {
 }
 
 .highlight {
-    color: #3b82f6;
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    color: #0066ff;
+    text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
 }
 
 .hero-subtitle {
@@ -188,14 +214,14 @@ body {
 }
 
 .btn-primary {
-    background: #3b82f6;
+    background: #0066ff;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #2563eb;
+    background: #0052cc;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
 }
 
 .btn-secondary {
@@ -206,7 +232,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #0f172a;
+    color: #000000;
     transform: translateY(-2px);
 }
 
@@ -216,19 +242,19 @@ body {
 }
 
 .profile-card {
-    background: rgba(30, 41, 59, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid #0066ff;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .profile-image {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: #3b82f6;
+    color: #0066ff;
 }
 
 .profile-card h3 {
@@ -250,7 +276,7 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    color: #e2e8f0;
+    color: #ffffff;
     position: relative;
 }
 
@@ -262,13 +288,13 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: #3b82f6;
+    background: #0066ff;
     border-radius: 2px;
 }
 
 /* CV Section */
 .cv {
-    background: #1e293b;
+    background: #111111;
 }
 
 .cv-content {
@@ -281,18 +307,18 @@ section {
     text-align: center;
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 2px solid #3b82f6;
+    border-bottom: 2px solid #0066ff;
 }
 
 .cv-header h1 {
-    color: #e2e8f0;
+    color: #ffffff;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .cv-info {
-    color: #3b82f6;
+    color: #0066ff;
     font-size: 1.1rem;
     margin: 0.5rem 0;
     font-weight: 500;
@@ -303,31 +329,31 @@ section {
 }
 
 .cv-section h2 {
-    color: #3b82f6;
+    color: #0066ff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
-    border-bottom: 1px solid #475569;
+    border-bottom: 1px solid #333333;
     padding-bottom: 0.5rem;
 }
 
 .cv-section p {
-    color: #cbd5e1;
+    color: #cccccc;
     line-height: 1.7;
     margin-bottom: 0.8rem;
 }
 
 .cv-section p strong {
-    color: #e2e8f0;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .cv-job {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #334155;
+    background: #222222;
     border-radius: 8px;
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid #0066ff;
 }
 
 .cv-job p {
@@ -339,7 +365,7 @@ section {
 }
 
 .cv-job p strong {
-    color: #e2e8f0;
+    color: #ffffff;
     font-size: 1.1rem;
 }
 
@@ -384,7 +410,7 @@ section {
 
 /* Education Section */
 .education {
-    background: #0f172a;
+    background: #000000;
 }
 
 .education-timeline {
@@ -400,7 +426,7 @@ section {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #3b82f6;
+    background: #0066ff;
 }
 
 .timeline-item {
@@ -413,7 +439,7 @@ section {
 .timeline-icon {
     width: 60px;
     height: 60px;
-    background: #3b82f6;
+    background: #0066ff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -421,18 +447,18 @@ section {
     color: white;
     font-size: 1.5rem;
     margin-right: 2rem;
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
     z-index: 1;
 }
 
 .timeline-content h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #e2e8f0;
+    color: #ffffff;
 }
 
 .timeline-date {
-    color: #3b82f6;
+    color: #0066ff;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -443,7 +469,7 @@ section {
 
 /* Experience Section */
 .experience {
-    background: #1e293b;
+    background: #111111;
 }
 
 .experience-grid {
@@ -453,12 +479,12 @@ section {
 }
 
 .experience-card {
-    background: #334155;
+    background: #222222;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid #475569;
+    border: 1px solid #333333;
     text-align: center;
 }
 
@@ -470,7 +496,7 @@ section {
 .card-icon {
     width: 80px;
     height: 80px;
-    background: #3b82f6;
+    background: #0066ff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -483,11 +509,11 @@ section {
 .experience-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #e2e8f0;
+    color: #ffffff;
 }
 
 .card-date {
-    color: #3b82f6;
+    color: #0066ff;
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -499,7 +525,7 @@ section {
 
 /* Portfolio Section */
 .portfolio {
-    background: #0f172a;
+    background: #000000;
 }
 
 .portfolio-grid {
@@ -509,12 +535,12 @@ section {
 }
 
 .portfolio-card {
-    background: #334155;
+    background: #222222;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid #475569;
+    border: 1px solid #333333;
 }
 
 .portfolio-card:hover {
@@ -524,9 +550,9 @@ section {
 
 .portfolio-card.featured {
     grid-column: span 2;
-    background: #1e293b;
+    background: #111111;
     color: white;
-    border: 2px solid #3b82f6;
+    border: 2px solid #0066ff;
 }
 
 .card-header {
@@ -539,11 +565,11 @@ section {
 .card-header h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #ffffff;
 }
 
 .card-badge {
-    background: #3b82f6;
+    background: #0066ff;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -552,7 +578,7 @@ section {
 }
 
 .portfolio-card.featured .card-badge {
-    background: #1d4ed8;
+    background: #0047b3;
 }
 
 .card-content {
@@ -568,13 +594,13 @@ section {
 
 .card-iframe iframe {
     width: 100%;
-    height: 600px;
+    height: 800px;
     border: none;
     border-radius: 8px;
-    transform: scale(0.8);
+    transform: scale(0.9);
     transform-origin: top left;
-    width: 125%;
-    height: 750px;
+    width: 111%;
+    height: 889px;
 }
 
 .card-actions {
@@ -993,10 +1019,10 @@ section {
     }
 
     .card-iframe iframe {
-        height: 400px;
-        transform: scale(0.7);
-        width: 143%;
-        height: 571px;
+        height: 500px;
+        transform: scale(0.8);
+        width: 125%;
+        height: 625px;
     }
 
     .interests-grid {
@@ -1141,10 +1167,10 @@ section {
     }
 
     .card-iframe iframe {
-        height: 350px;
-        transform: scale(0.6);
-        width: 167%;
-        height: 583px;
+        height: 450px;
+        transform: scale(0.7);
+        width: 143%;
+        height: 643px;
     }
 
     .interest-card {
